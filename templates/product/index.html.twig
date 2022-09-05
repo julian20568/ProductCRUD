@@ -1,28 +1,37 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Product index{% endblock %}
+{% block title %}Product index {% endblock %}
 
 {% block body %}
-    <h1>Product index</h1>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand">Crud</a>
+            <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <h1>Lista de productos</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Code</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Brand</th>
-                <th>Price</th>
-                <th>CreatedAt</th>
-                <th>UpdatedAt</th>
-                <th>actions</th>
+                <th scope="col">Id</th>
+                <th scope="col">Code</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Price</th>
+                <th scope="col">CreatedAt</th>
+                <th scope="col">UpdatedAt</th>
+                <th scope="col">actions</th>
             </tr>
         </thead>
         <tbody>
         {% for product in products %}
             <tr>
-                <td>{{ product.id }}</td>
+                <td scope="row">{{ product.id }}</td>
                 <td>{{ product.code }}</td>
                 <td>{{ product.name }}</td>
                 <td>{{ product.description }}</td>
